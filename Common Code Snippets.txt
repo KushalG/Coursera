@@ -1,0 +1,29 @@
+Common Code Snippets
+--------------------
+
+Python
+------
+
+
+
+
+
+graphlab.set_runtime_config('GRAPHLAB_DEFAULT_NUM_PYLAMBDA_WORKERS', 4)
+
+
+Git
+------
+Git clone https://....
+Git remote upstream Https://....
+Git push origin master
+Git status
+Git diff
+
+
+
+
+
+
+R
+------
+
