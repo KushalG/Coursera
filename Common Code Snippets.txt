@@ -7,6 +7,7 @@ Python
 Variable = graphlab.SFrame('filename')
 Var.head()
 Var['word_count'] =  graphlab.text_analytics.count_words(Var['column name'])
+tableOfSArray = SArray.stack('col name',new_column_name(['col 1','col 2'])).sort('col',ascending=False)
 Var = Var[Var['Column Name'] != XX]
 train_data,test_data= Var.random.split(.8,seed=0)
 X_model = graphlab.logistic_classifier.create(train_data,
@@ -14,15 +15,16 @@ X_model = graphlab.logistic_classifier.create(train_data,
 												features= ['col name'],
 												validation_set = test_data)
 for X in XXX:
-    Var[word] = Var['Col name'].apply(lambda functionName: functionName.get(X,0))												
-												
-												
-graphlab.set_runtime_config('GRAPHLAB_DEFAULT_NUM_PYLAMBDA_WORKERS', 4)
-X_Model.evaluate(test_data,metric = 'roc_curve')
+    Var[word] = Var['Col name'].apply(lambda functionName: functionName.get(X,0))																																	
+tfidf=graphlab.text_analytics.tf_idf(Var['col name'])
+	X_Model.evaluate(test_data,metric = 'roc_curve')
 x_Model.show(view='Evaluation')
 x_Model.predict(Var, output_type = 'probability')
 Var.sort('column name',ascending=false)
-
+graphlab.distances.cosine(Var['tfidf'][0],Var2['tfidf'][0])
+knn_<cosine>_model = graphlab.nearest_neighbours.create(Var,features=['tfidf'],label='name',<distance='cosine'>)
+knn_model.query(Var) ~ set of nearest neighbours
+graphlab.set_runtime_config('GRAPHLAB_DEFAULT_NUM_PYLAMBDA_WORKERS', 4)
 
 Git
 ------
